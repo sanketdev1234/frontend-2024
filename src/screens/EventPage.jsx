@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CustomModal from '../components/CustomModal'
 import Navbar from '../components/Navbar'
 import Joker from '../components/joker.svg'
 import Hoppie from '../components/hoppie.svg'
@@ -10,6 +11,7 @@ import data1 from '../data1.json'
 import data2 from '../data2.json'
 import data3 from '../data3.json'
 import Footer from '../components/Footer'
+
 const EventPage = () => {
 
   const HandleEventLoad = () => {
@@ -25,7 +27,22 @@ const EventPage = () => {
 
     document.getElementById('pillar').style.marginTop = `${partThree - pillarBottom}px`
   }
+  
+  const [open, setOpen] = useState(false)
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [time, setTime] = useState('')
+  const [link, setLink] = useState('')
+  const [readmore, setReadmore] = useState("")
 
+  const setTheThings = (data) => {
+    setTitle(data.title)
+    setDescription(data.description)
+    setTime(data.time)
+    setLink(data.link)
+    setReadmore(data.readmore)
+    setOpen(true)
+  }
 
   return (
     <>
@@ -42,9 +59,9 @@ const EventPage = () => {
                 <img id='hoppie' src={Hoppie} alt="Hoppie" />
                 {data1[0].map((creatediv) => {
                   return (
-                    <div className='sch-container'>
+                    <div className='sch-container' onClick={() => setTheThings(creatediv)}>
                       <h1 className='sch-head'>{creatediv.time}</h1>
-                      <p className='sch-content'>{creatediv.description}</p>
+                      <p className='sch-content'>{creatediv.title}</p>
                     </div>
                   )
                 })}
@@ -53,9 +70,9 @@ const EventPage = () => {
               <div className="part-one-sub-side-2">
                   {data1[1].map((creatediv) => {
                     return (
-                      <div className='sch-container'>
+                      <div className='sch-container' onClick={() => setTheThings(creatediv)}>
                         <h1 className='sch-head'>{creatediv.time}</h1>
-                        <p className='sch-content'>{creatediv.description}</p>
+                        <p className='sch-content'>{creatediv.title}</p>
                       </div>
                     )
                   })}
@@ -73,9 +90,9 @@ const EventPage = () => {
               <div className="part-two-sub-side-1">
                 {data2[0].map((creatediv) => {
                   return (
-                    <div className='sch-container'>
+                    <div className='sch-container' onClick={() => setTheThings(creatediv)}>
                       <h1 className='sch-head'>{creatediv.time}</h1>
-                      <p className='sch-content'>{creatediv.description}</p>
+                      <p className='sch-content'>{creatediv.title}</p>
                     </div>
                   )
                 })}
@@ -86,9 +103,9 @@ const EventPage = () => {
               <div className="part-two-sub-side-2">
                 {data2[1].map((creatediv) => {
                   return (
-                    <div className='sch-container'>
+                    <div className='sch-container' onClick={() => setTheThings(creatediv)}>
                       <h1 className='sch-head'>{creatediv.time}</h1>
-                      <p className='sch-content'>{creatediv.description}</p>
+                      <p className='sch-content'>{creatediv.title}</p>
                     </div>
                   )
                 })}
@@ -106,9 +123,9 @@ const EventPage = () => {
               <div className="part-three-sub-side-1">
                 {data3[0].map((creatediv) => {
                   return (
-                    <div className='sch-container'>
+                    <div className='sch-container' onClick={() => setTheThings(creatediv)}>
                       <h1 className='sch-head'>{creatediv.time}</h1>
-                      <p className='sch-content'>{creatediv.description}</p>
+                      <p className='sch-content'>{creatediv.title}</p>
                     </div>
                   )
                 })}
@@ -116,9 +133,9 @@ const EventPage = () => {
               <div className="part-three-sub-side-2">
                 {data3[1].map((creatediv) => {
                   return (
-                    <div className='sch-container'>
+                    <div className='sch-container' onClick={() => setTheThings(creatediv)}>
                       <h1 className='sch-head'>{creatediv.time}</h1>
-                      <p className='sch-content'>{creatediv.description}</p>
+                      <p className='sch-content'>{creatediv.title}</p>
                     </div>
                   )
                 })}
@@ -127,6 +144,9 @@ const EventPage = () => {
             <img id='balloon' src={Balloon} alt="Balloon" />  
           </div>
         </div>
+        <CustomModal open={open} handleClose={() => setOpen(false)} title={title} time={time} link={link} readmore={readmore}>
+          {description}
+        </CustomModal>
     </div>
     <Footer/>
     </>
