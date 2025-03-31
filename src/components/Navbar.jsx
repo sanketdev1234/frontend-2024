@@ -48,8 +48,8 @@ const Navbar = () => {
           )}
         </li>
         <li className="nav-li">
-          <Link to="/voting">Voting Page</Link>
-          {location.pathname === "/voting" && (
+          <Link to="/sponsors">Sponsors</Link>
+          {location.pathname === "/sponsors" && (
             <div className="border-cross"></div>
           )}
         </li>

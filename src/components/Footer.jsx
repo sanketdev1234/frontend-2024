@@ -1,41 +1,55 @@
-import React from "react";
-import {Link} from 'react-router-dom'
-import { motion } from "framer-motion";
-import "../styles/footer.css";
-import festLogo from "../images/festLogo.png";
-import iiitLogo from "../images/iiit_surat.png";
+import React from 'react'
+import iiit_logo from '../images/iiit_surat.png'
+import spring from '../images/Spring.png'
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="back">
-        <div className="links">
-          <Heading><Link to="/core-team/developer">Developers</Link></Heading>
-          <Heading><Link to="/core-team/management">Management</Link></Heading>
-          <Heading><Link to="/core-team/pr">Public Relations</Link></Heading>
-          <Heading><Link to="/core-team/artAndDesign">Art & Design</Link></Heading>
-          <Heading><Link to="/core-team/Coding">Coding</Link></Heading>
-          <Heading><Link to="/core-team/Content">Content</Link></Heading>
-          <Heading><Link to="/core-team/Robotics">Robotics</Link></Heading>
-          <Heading><Link to="/core-team/Cultural">Cultural</Link></Heading>
-          <Heading><Link to="/core-team/ESummit">E-Summit</Link></Heading>
-          <Heading><Link to="/core-team/media">Media</Link></Heading>
-          <Heading><Link to="/core-team/Sports">Sports</Link></Heading>
-        </div>
-        <div className="logo">
-          <div>
-            <img src={iiitLogo} alt="" className="iiit-logo" />
-          </div>
-          <div>
-            <img src={festLogo} alt="" className="fest-logo" />
-          </div>
-        </div>
-      </div>
+    <div className='mt-[10px] md:mt-[60px] bg-black'>
+         <div className='flex justify-start md:justify-between items-center h-full py-4 md:py-12 md:px-8'>
+            <div className='flex flex-col'>
+                <div className='md:flex md:gap-4 mt-2 md:mt-16  md:ml-20'>
+                    <div className='w-20 md:w-28 scale-75 md:scale-100'>
+                        <img src={iiit_logo} alt="IIIT Surat Logo" className='w-full h-auto' />
+                    </div>
+                    <div className='w-20 md:w-44 scale-90 md:scale-100'>
+                        <img src={spring} alt="Spring Logo" className='w-full h-auto' />
+                    </div>
+                </div>
+                <div className='text-white hidden md:block text-xs md:text-lg font-normal mt-1 md:mt-4 md:ml-20'>
+                    &copy; 2025 spring fiesta
+                </div>
+            </div>
+
+            <div className='flex justify-start md:justify-center items-center md:gap-14 text-white mt-2 md:mt-0 scale-75 md:scale-100 '>
+                    <div className='text-xs md:text-base scale-90 md:scale-100'>
+                    <div className='text-base md:text-xl font-normal'>Contact</div>
+                    <div className='mt-1 md:mt-3 text-xs md:text-base font-normal'>Indian Institute of information</div>
+                    <div className='text-xs md:text-base font-normal'>technology</div>
+                    <div className='text-xs md:text-base font-normal'>Kholvad Campus,</div>
+                    <div className='text-xs md:text-base font-normal'>Kamrej, Surat . 394190</div>
+                    <div className='text-xs md:text-base font-normal'>Gujarat</div>
+                    <div className='text-xs md:text-base font-normal'>Email:springfiesta@iiitsurat.ac.in</div>
+                </div>
+
+                <div className='flex flex-col gap-2 md:gap-8 text-xs md:text-base max-sm:scale-110'>
+                    <div className='font-normal'>Home</div>
+                    <div className='font-normal'>Events</div>
+                    <div className='font-normal'>Core Team</div>
+                    <div className='font-normal'>Gallery</div>
+                    <div className='font-normal'>Sponsors</div>
+
+                    
+                </div> 
+                
+           
+            </div>  
+            
+             
+         </div>
+         <div className='text-white text-center md:hidden font-normal text-base pb-10'>
+                &copy; 2025 spring fiesta
+                </div>
     </div>
-  );
-};
+  )
+}
 
-const Heading = ({ children }) => {
-  return <motion.h3 style={{textAlign:"center"}} whileHover={{ scale: [1, 1.1, 1] }}>{children}</motion.h3>;
-};
-
-export default Footer;
+export default Footer
