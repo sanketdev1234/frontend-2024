@@ -18,7 +18,7 @@ const Sponsors = () => {
     <div> 
         <Navbar></Navbar>
         <div className='overflow-x-hidden min-h-screen overflow-hidden'>
-            <div className='h-[75vh] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-64 mt-10 relative'>
+            <div className=' h-[75vh] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-64 mt-10 relative'>
                 <div className='flex flex-col justify-start md:ml-12 lg:ml-24 md:justify-start items-center md:items-start relative z-10'>
                     <h1 className='text-white text-4xl md:text-5xl font-bold mb-6 md:mb-8'>
               Title Sponsor 
