@@ -79,7 +79,6 @@ const Sponsors = () => {
                 </div>
             </div>
             
-            <img className='mid-line w-full' src={Horizontal} alt="horizontal" />
             <Footer></Footer>
         </div>
     </div>
