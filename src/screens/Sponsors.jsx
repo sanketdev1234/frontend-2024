@@ -6,8 +6,6 @@ import sponsors_img3 from '../images/sponsors_img3.png'
 import Horizontal from '../components/horrizontal-pipe.svg'
 import Footer from '../components/Footer';
 import canara from '../images/canara.png'
-import coding_sponsor_logo from '../images/coding_sponsor_logo.webp'
-import coding_sponsor_logo2 from '../images/coding_sponsor_logo2.png'
 import stockgro_logo from '../images/stockgro_logo.png'
 import km_logo from '../images/km_logo.png'
 import mey_mey_logo from '../images/mey_mey_logo.png'

@@ -3,7 +3,6 @@ import iiit_logo from '../images/iiit_surat.png'
 import spring from '../images/Spring.png'
 import {Link , useLocation} from 'react-router-dom'
 const Footer = () => {
-  const location = useLocation()
   return (
     <div className='overflow-x-hidden mt-[10px] md:mt-[60px] bg-black'>
          <div className='flex justify-between items-center h-full py-4 md:py-12 md:px-8'>
