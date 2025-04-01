@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import sponsors_img1 from '../images/sponsors_img1.png'
 import sponsors_img2 from '../images/sponsors_img2.png'
 import sponsors_img3 from '../images/sponsors_img3.png'
-import Horizontal from '../components/horrizontal-pipe.svg'
 import Footer from '../components/Footer';
 import canara from '../images/canara.png'
 import stockgro_logo from '../images/stockgro_logo.png'
