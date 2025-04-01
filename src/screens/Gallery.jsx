@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "../components/Navbar";
 import "../styles/gallery.css";
@@ -15,12 +15,28 @@ export default function Gallery() {
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   const galleryRef = useRef();
+  const intervalRef = useRef();
 
+  // Auto-rotate carousel
   useEffect(() => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setCarouselIndex((prev) => (prev + 1) % images.length);
     }, 4000);
-    return () => clearInterval(interval);
+
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  // Stop carousel when scrolling to gallery
+  useEffect(() => {
+    const stopOnScroll = () => {
+      const galleryTop = galleryRef.current?.getBoundingClientRect().top;
+      if (galleryTop && galleryTop < window.innerHeight * 0.8) {
+        clearInterval(intervalRef.current);
+      }
+    };
+
+    window.addEventListener("scroll", stopOnScroll);
+    return () => window.removeEventListener("scroll", stopOnScroll);
   }, []);
 
   const manualPrev = () => {
@@ -38,17 +54,17 @@ export default function Gallery() {
 
   const closeImage = () => setSelectedImage(null);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     const newIndex = (currentIndex - 1 + images.length) % images.length;
     setSelectedImage(images[newIndex]);
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex]);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     const newIndex = (currentIndex + 1) % images.length;
     setSelectedImage(images[newIndex]);
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -60,7 +76,7 @@ export default function Gallery() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImage, currentIndex]);
+  }, [selectedImage, nextImage, prevImage]);
 
   return (
     <div className="gallery-wrapper">
