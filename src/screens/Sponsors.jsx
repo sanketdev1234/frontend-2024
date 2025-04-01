@@ -32,7 +32,7 @@ const Sponsors = () => {
                 </div>
             </div>
 
-            <div className='h-[75vh] grid grid-cols-1 md:grid-cols-2 gap-2 mt-10 relative'>
+            <div className=' h-[75vh] grid grid-cols-1 md:grid-cols-2 gap-2 mt-10 relative'>
                 <div className='absolute inset-0 md:relative md:inset-auto flex justify-start items-center opacity-20 md:opacity-100'>
                     <img src={sponsors_img2} alt="Associate Sponsor" className='w-64 md:w-80 lg:w-96 h-auto object-contain' />
                 </div>
