@@ -1,10 +1,12 @@
 import React from 'react'
 import iiit_logo from '../images/iiit_surat.png'
 import spring from '../images/Spring.png'
+import {Link , useLocation} from 'react-router-dom'
 const Footer = () => {
+  const location = useLocation()
   return (
-    <div className='mt-[10px] md:mt-[60px] bg-black'>
-         <div className='flex justify-start md:justify-between items-center h-full py-4 md:py-12 md:px-8'>
+    <div className='overflow-x-hidden mt-[10px] md:mt-[60px] bg-black'>
+         <div className='flex justify-between items-center h-full py-4 md:py-12 md:px-8'>
             <div className='flex flex-col'>
                 <div className='md:flex md:gap-4 mt-2 md:mt-16  md:ml-20'>
                     <div className='w-20 md:w-28 scale-75 md:scale-100'>
@@ -19,7 +21,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='flex justify-start md:justify-center items-center md:gap-14 text-white mt-2 md:mt-0 scale-75 md:scale-100 '>
+            <div className='flex justify-between md:justify-center items-center md:gap-14 text-white mt-2 md:mt-0 scale-75 md:scale-100 '>
                     <div className='text-xs md:text-base scale-90 md:scale-100'>
                     <div className='text-base md:text-xl font-normal'>Contact</div>
                     <div className='mt-1 md:mt-3 text-xs md:text-base font-normal'>Indian Institute of information</div>
@@ -31,11 +33,23 @@ const Footer = () => {
                 </div>
 
                 <div className='flex flex-col gap-2 md:gap-8 text-xs md:text-base max-sm:scale-110'>
+                   <Link to="/">
                     <div className='font-normal'>Home</div>
+                    
+                   </Link>
+                   <Link to="/events">
                     <div className='font-normal'>Events</div>
+                    
+                   </Link>
+                   <Link to="/core-team">
                     <div className='font-normal'>Core Team</div>
-                    <div className='font-normal'>Gallery</div>
+                   </Link>
+                   <Link to="/sponsors">
                     <div className='font-normal'>Sponsors</div>
+                   </Link>
+                   <Link to="/gallery">
+                    <div className='font-normal'>Gallery</div>
+                   </Link>
 
                     
                 </div> 
