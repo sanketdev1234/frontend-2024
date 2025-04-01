@@ -1,7 +1,7 @@
 import React from 'react'
 import iiit_logo from '../images/iiit_surat.png'
 import spring from '../images/Spring.png'
-import {Link , useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='overflow-x-hidden mt-[10px] md:mt-[60px] bg-black'>
