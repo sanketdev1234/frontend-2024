@@ -5,45 +5,41 @@ import "../styles/gallery.css";
 
 const images = Array.from({ length: 30 }, (_, i) => ({
   id: i + 1,
-    src: `/images/gallerySlider/image${i + 1}.JPG`,
-    alt:`image${i + 1}`,
+  src: `/images/gallerySlider/image${i + 1}.webp`,
+  alt: `image${i + 1}`,
 }));
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [direction, setDirection] = useState("next");
 
-  const galleryRef = useRef();
   const intervalRef = useRef();
 
-  // Auto-rotate carousel
   useEffect(() => {
     intervalRef.current = setInterval(() => {
+      setDirection("next");
       setCarouselIndex((prev) => (prev + 1) % images.length);
     }, 4000);
 
     return () => clearInterval(intervalRef.current);
   }, []);
 
-  // Stop carousel when scrolling to gallery
   useEffect(() => {
-    const stopOnScroll = () => {
-      const galleryTop = galleryRef.current?.getBoundingClientRect().top;
-      if (galleryTop && galleryTop < window.innerHeight * 0.8) {
-        clearInterval(intervalRef.current);
-      }
+    document.body.style.overflow = selectedImage ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
     };
-
-    window.addEventListener("scroll", stopOnScroll);
-    return () => window.removeEventListener("scroll", stopOnScroll);
-  }, []);
+  }, [selectedImage]);
 
   const manualPrev = () => {
+    setDirection("prev");
     setCarouselIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const manualNext = () => {
+    setDirection("next");
     setCarouselIndex((prev) => (prev + 1) % images.length);
   };
 
@@ -92,11 +88,18 @@ export default function Gallery() {
         />
         <div className="carousel-foreground">
           <div className="carousel-gradient" />
-          <img
-            src={images[carouselIndex].src}
-            alt={images[carouselIndex].alt}
-            className="carousel-image"
-          />
+          <div
+            className={`carousel-image-wrapper ${
+              direction === "next" ? "slide-in-right" : "slide-in-left"
+            }`}
+            key={carouselIndex}
+          >
+            <img
+              src={images[carouselIndex].src}
+              alt={images[carouselIndex].alt}
+              className="carousel-image"
+            />
+          </div>
           <div className="carousel-overlay">
             <button className="carousel-btn left" onClick={manualPrev}>
               <ChevronLeft size={24} />
@@ -109,7 +112,7 @@ export default function Gallery() {
       </div>
 
       {/* Grid */}
-      <div ref={galleryRef} className="gallery-container">
+      <div className="gallery-container">
         {images.map((image, index) => (
           <div
             key={image.id}

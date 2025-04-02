@@ -278,3 +278,44 @@ body {
     right: 6px;
   }
 }
+
+.carousel-image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.slide-in-right {
+  animation-name: slideInFromRight;
+}
+
+.slide-in-left {
+  animation-name: slideInFromLeft;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
