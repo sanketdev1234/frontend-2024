@@ -148,8 +148,8 @@ const EventPage = () => {
           {description}
         </CustomModal>
     </div>
-    <img className='mid-line w-full' src={Horizontal} alt="horizontal" />
     <Footer/>
+
     </>
   )
 }
