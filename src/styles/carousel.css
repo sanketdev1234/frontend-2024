@@ -153,3 +153,9 @@
     }
   }
 }
+
+@media (max-width:600px){
+  .fullscreen-carousel{
+height: 40vh!important;
+  }
+}
