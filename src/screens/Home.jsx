@@ -83,7 +83,6 @@ const Home = () => {
           </div>
           <div className="carousel"><Carousel/></div>
         </div>
-
         <Footer />
       </div>
     </>
