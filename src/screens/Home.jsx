@@ -3,11 +3,14 @@ import "../styles/landing.css";
 import group from "../images/Group.png";
 import path140 from "../images/path140.png";
 import group152 from "../images/Group_152.png";
-import group104 from "../images/Group_104.png";
+import group104 from "../images/Group_104.png"
+import leftcurtain from "../images/leftcurtain.png";
+import rightcurtain from "../images/rightcurtain.png";
 import group1765731 from "../images/Grop_1765731.png";
 import curtains from "../images/curtains.svg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Carousel from "../components/Carousel";
 
 const Home = () => {
   const mainRef = useRef(null);
@@ -71,8 +74,14 @@ const Home = () => {
         </div>
 
         <div className="page4">
-          <img src={group1765731} alt="img" />
-          
+          <div className="img1">
+          <img src={leftcurtain} alt="img" />
+          </div>
+
+      <div className="img2">
+          <img src={rightcurtain} alt="img" />
+          </div>
+          <div className="carousel"><Carousel/></div>
         </div>
 
         <Footer />
