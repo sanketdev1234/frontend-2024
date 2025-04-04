@@ -332,7 +332,7 @@ z-index: 30;
 
 }
 .page4{
-  min-height: 65vh;
+  min-height: 60vh;
   width:100vw;
   position: relative;
   /* border:2px solid black; */
@@ -434,23 +434,17 @@ z-index: 30;
   left:22.8%;
 }
 
-.page4 .img1 img{
-  display: none;
-}
-.page4 .img2 img{
-  display: none;
-}
+
 
 
 .page4 .img1 {
   height: 100%;
-  width: 32%;
+  width:42%;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 20;
-  background-image: url('../images/lc1.png');
-  background-size: cover;
+
 
   
 }
@@ -458,26 +452,34 @@ z-index: 30;
 /* Right Curtain */
 .page4 .img2 {
   height: 100%;
-  width: 32%;
+  width: 42%;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 20;
-  background-image: url('../images/rc1.png');
-  background-size: cover;
- 
   
 }
+.page4 .img1 img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin-left:-10% ;
+}
 
-
+.page4 .img2 img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin-left :10%!important;
+}
 
 .carousel{
-  width: 65%;
+  width: 55%;
   height: 53%;
   z-index: 5;
-  left:17.5%;
+  left:22.5%;
   position: absolute;
-  margin-top: 30.5%;
+  margin-top: 32%;
   margin-bottom: 2%;
   
   }
