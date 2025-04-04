@@ -12,6 +12,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
 
+console.log(group1765731);
+
 const Home = () => {
   const mainRef = useRef(null);
 
