@@ -331,7 +331,7 @@ background-size: 400.00px 400.00px;
 
 }
 .page4{
-  height:fit-content;
+  min-height: 65vh;
   width:100vw;
   position: relative;
   /* border:2px solid black; */
@@ -435,7 +435,7 @@ background-size: 400.00px 400.00px;
 
 .page4 .img1 {
   height: 100%;
-  width: 50%;
+  width: 35%;
   position: absolute;
   left: 0;
   top: 0;
@@ -446,7 +446,7 @@ background-size: 400.00px 400.00px;
 /* Right Curtain */
 .page4 .img2 {
   height: 100%;
-  width: 50%;
+  width: 35%;
   position: absolute;
   right: 0;
   top: 0;
@@ -468,13 +468,12 @@ background-size: 400.00px 400.00px;
 
 
 .carousel{
-  width: 62%;
+  width: 58%;
   height: 50%;
-
   z-index: 5;
-  left:19%;
+  left:20.8%;
   position: absolute;
-  margin-top: 83%;
+  margin-top: 40%;
   margin-bottom: 2%;
   
   }
